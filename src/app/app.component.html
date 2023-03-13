@@ -1,0 +1,60 @@
+<h1>hello</h1>
+<div >
+  <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Adress</th>
+      <th>Phone</th>
+      <th>Working</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of data">
+    <tr>
+      <th>{{user.id}}</th>
+      <th>{{user.name}}</th>
+      <th>{{user.address}}</th>
+      <th>{{user.phone}}</th>
+      <th *ngIf="user.working"><button>Working</button></th>
+    </tr>
+  </tbody>   
+  </table>
+
+</div>
+
+<!-- <input type="text" [(ngModel)]="value">
+{{value}} -->
+
+<!-- <select  [(ngModel)]="value" >
+  <option value="">Please select</option>
+  <option value="sunday">Sunday</option>
+  <option value="monday">Monday</option>
+  <option value="tuesday">Tuesday</option>
+  <option value="wednesday">Wednesday</option>
+  <option value="thursday">Thursday</option>
+  <option value="firday">Firday</option>
+  <option value="saturday">Saturday</option>
+</select> -->
+<p *ngFor="let data of week">
+  <input type="radio" [(ngModel)]="value" [value]="data"> {{data}}
+  
+</p>
+
+<div [ngSwitch]="value">
+  <span *ngSwitchCase="'sunday'">Sunday</span>
+  <span *ngSwitchCase="'monday'">Monday</span>
+  <span *ngSwitchCase="'tuesday'">Tuesday</span>
+  <span *ngSwitchCase="'wednesday'">Wednesday</span>
+  <span *ngSwitchCase="'thursday'">Thursday</span>
+  <span *ngSwitchCase="'firday'">Firday</span>
+  <span *ngSwitchCase="'saturday'">Saturday</span>
+  <span *ngSwitchDefault>Hello</span>
+</div>
+
+<h1 [ngClass]="getClass()">Hello how are you</h1>
+<button (click)="myclass=!myclass">Click Me</button>
+
+<h1 [ngStyle]="getStyle()">Hello how are you</h1>
+<button (click)="mystyle=!mystyle">Click Me</button>
+{{mystyle}}
